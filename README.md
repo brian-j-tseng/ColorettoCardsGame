@@ -37,8 +37,8 @@ Only your three **best** colours score positive; all others score negative.
 Wild Jokers count as any one colour. Each “+2” card adds, well, +2.  
 *(The full score table is in `docs/score_table.svg` and hard-coded in `Score.cpp`.)*
 
-> **Status: ARCHIVED / LEGACY**  
-> This was a hobby project from 2018. Coding style is outdated and bugs exist.  
-> Pull requests are welcome, but I keep it mainly for historical reference.
+### Status: ARCHIVED / LEGACY
+This was a hobby project from 2018. Coding style is outdated and bugs exist.  
+Pull requests are welcome, but I keep it mainly for historical reference.
 
 
