@@ -7,19 +7,19 @@
 
 using namespace std;
 
-void display(int[],int[],int[],int[],int[], int[], int[], int[], int[]);//Åã¥Ü¥dµPªO
-void endofgame(int[], int[], int[], int[]);//µ²ºâ¤À¼Æ
+void display(int[],int[],int[],int[],int[], int[], int[], int[], int[]);//é¡¯ç¤ºå¡ç‰Œæ¿
+void endofgame(int[], int[], int[], int[]);//çµç®—åˆ†æ•¸
 
 int x[77];
 int card[76];
 
 int main()
 {
-	//¥dµP¸ê®Æ®w
+	//å¡ç‰Œè³‡æ–™åº«
 	static int a=4;
 	char playernumber[100];
 	cout << "welcome to play coloretto" << endl;
-	//ª±®a¤H¼Æ¬°¥|
+	//ç©å®¶äººæ•¸ç‚ºå››
 	if (a == 4)
 	{
 		int cardnumber, washcard[76];
@@ -54,11 +54,11 @@ int main()
 			{
 				card[cardnumber] = 7;//7 for gray
 			}
-			if (73 >= cardnumber && cardnumber >= 64)//¨â¤À¥d
+			if (73 >= cardnumber && cardnumber >= 64)//å…©åˆ†å¡
 			{
 				card[cardnumber] = 8;//8 for plus two
 			}
-			if (76 >= cardnumber && cardnumber >= 74)//°­µP
+			if (76 >= cardnumber && cardnumber >= 74)//é¬¼ç‰Œ
 			{
 				card[cardnumber] = 9;//9 for rainbow
 			}
@@ -66,7 +66,7 @@ int main()
 		cout << "waiting for a moment" << endl;
 		while (true)
 		{
-			for (int i = 1; i <= 76; i++)//¬~µP
+			for (int i = 1; i <= 76; i++)//æ´—ç‰Œ
 			{
 				x[i] = i;
 			}
@@ -80,7 +80,7 @@ int main()
 				x[a1] = x[a2];
 				x[a2] = temp;
 			}
-			if (card[x[1]] != 8 && card[x[1]] != 9 && card[x[2]] != 8 && card[x[2]] != 9 && card[x[3]] != 8 && card[x[3]] != 9 && card[x[4]] != 8 && card[x[4]] != 9&& card[x[1]] != card[x[2]]  && card[x[1]] != card[x[3]] && card[x[1]] != card[x[4]] && card[x[2]] != card[x[3]] && card[x[2]] != card[x[4]] && card[x[3]] != card[x[4]])//½T«O«e¥|±iµP¤£·|¬Oµ¹µP©Î¥[¤G¡A¤]¤£­«½Æ
+			if (card[x[1]] != 8 && card[x[1]] != 9 && card[x[2]] != 8 && card[x[2]] != 9 && card[x[3]] != 8 && card[x[3]] != 9 && card[x[4]] != 8 && card[x[4]] != 9&& card[x[1]] != card[x[2]]  && card[x[1]] != card[x[3]] && card[x[1]] != card[x[4]] && card[x[2]] != card[x[3]] && card[x[2]] != card[x[4]] && card[x[3]] != card[x[4]])//ç¢ºä¿å‰å››å¼µç‰Œä¸æœƒæ˜¯çµ¦ç‰Œæˆ–åŠ äºŒï¼Œä¹Ÿä¸é‡è¤‡
 			{
 				break;
 			}
@@ -94,14 +94,14 @@ int main()
 		int row1counter=0, row2counter=0, row3counter=0, row4counter=0;
 		int you[76], player1[76], player2[76], player3[76];
 		int youcounter=1, player1counter=1, player2counter=1, player3counter=1;
-		int pickyou = 0, pickplayer1 = 0, pickplayer2 = 0, pickplayer3 = 0;//¨Ï¥ÎªÌ©Îai¬O§_°õ¦æ¹L®³¨ú¬Y¤@¯èªº°Ê§@
+		int pickyou = 0, pickplayer1 = 0, pickplayer2 = 0, pickplayer3 = 0;//ä½¿ç”¨è€…æˆ–aiæ˜¯å¦åŸ·è¡Œéæ‹¿å–æŸä¸€èˆªçš„å‹•ä½œ
 		int prooffourdraw = 0;
 		int chosenrow[5];
 		chosenrow[1] = 0;
 		chosenrow[2] = 0;
 		chosenrow[3] = 0;
 		chosenrow[4] = 0;
-		//²Ä¤@¦¸¤¶­±¿é¥X
+		//ç¬¬ä¸€æ¬¡ä»‹é¢è¼¸å‡º
 		you[0] = card[x[1]];
 		player1[0] = card[x[2]];
 		player2[0] = card[x[3]];
@@ -114,7 +114,7 @@ int main()
 			static char move[4];
 			if (pickyou == 0)
 			{
-				while (true)//¨Ï¥ÎªÌ¤§°Ê§@¤ÎÅã¥Üªí
+				while (true)//ä½¿ç”¨è€…ä¹‹å‹•ä½œåŠé¡¯ç¤ºè¡¨
 				{
 					cin.getline(move, 256);
 					if (chosenrow[1] == 1)
@@ -137,7 +137,7 @@ int main()
 					{
 						if (move[0] == 'd'&& move[1] == 'r'&& move[2] == 'a'&& move[3] == 'w'&&strlen(move)==4)
 						{
-							switch (card[x[counter]])//¨Ï¥ÎªÌ©â¨ìªºµP
+							switch (card[x[counter]])//ä½¿ç”¨è€…æŠ½åˆ°çš„ç‰Œ
 							{
 							case 1:
 								cout << "the card is red" << endl;
@@ -168,7 +168,7 @@ int main()
 								break;
 							}
 							counter++;
-							while (true)//¨Ï¥ÎªÌ­n©ñµP¦Ü­ş¤@¦æ
+							while (true)//ä½¿ç”¨è€…è¦æ”¾ç‰Œè‡³å“ªä¸€è¡Œ
 							{
 								cout << "please enter 1~4 to put the card to the row " << endl;
 								cin.clear();
@@ -209,7 +209,7 @@ int main()
 							break;
 						}
 					}
-					if (strlen(move) == 1 && (move[0] == '1' || move[0] == '2' || move[0] == '3' || move[0] == '4'))//¨Ï¥ÎªÌ®³¤F­ş¤@¦æ¡A¨Ã§â¥dµP¸ê®ÆÀx¦s¤Î­«¸m
+					if (strlen(move) == 1 && (move[0] == '1' || move[0] == '2' || move[0] == '3' || move[0] == '4'))//ä½¿ç”¨è€…æ‹¿äº†å“ªä¸€è¡Œï¼Œä¸¦æŠŠå¡ç‰Œè³‡æ–™å„²å­˜åŠé‡ç½®
 					{
 						if ((move[0] == '1'&&chosenrow[1] == 1) || (move[0] == '2'&&chosenrow[2] == 1) || (move[0] == '3'&&chosenrow[3] == 1) || (move[0] == '4'&&chosenrow[4] == 1))
 						{
@@ -290,7 +290,7 @@ int main()
 			}
 			if (pickplayer1 == 0)
 			{
-				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai1ªº°Ê§@
+				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai1çš„å‹•ä½œ
 				{
 					row1[row1counter] = card[x[counter]];
 					row1counter++;
@@ -360,7 +360,7 @@ int main()
 			}
 			if (pickplayer2 == 0)
 			{
-				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai2ªº°Ê§@
+				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai2çš„å‹•ä½œ
 				{
 					row2[row2counter] = card[x[counter]];
 					row2counter++;
@@ -430,7 +430,7 @@ int main()
 			}
 			if (pickplayer3 == 0)
 			{
-				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai3ªº°Ê§@
+				if ((row1counter == 0 || chosenrow[1] == 1) && (row2counter == 0 || chosenrow[2] == 1) && (row3counter == 0 || chosenrow[3] == 1) && (row4counter == 0 || chosenrow[4] == 1))//ai3çš„å‹•ä½œ
 				{
 					row3[row3counter] = card[x[counter]];
 					row3counter++;
@@ -499,12 +499,12 @@ int main()
 				}
 			}
 
-			if (counter >= 60 && chosenrow[1] == 1 && chosenrow[2] == 1 &&	chosenrow[3] == 1 && chosenrow[4] == 1)//µ²§ô¾÷¨î
+			if (counter >= 60 && chosenrow[1] == 1 && chosenrow[2] == 1 &&	chosenrow[3] == 1 && chosenrow[4] == 1)//çµæŸæ©Ÿåˆ¶
 			{
 				break;
 			}
 		}
-		//µ²ºâ¤À¼Æ
+		//çµç®—åˆ†æ•¸
 		endofgame(you,player1,player2,player3);
 		
 		system("pause");
@@ -1154,7 +1154,7 @@ void endofgame(int f[], int g[], int h[], int j[])
 	numberplayer2[1] = numberplayer2[1] + rainbowinplayer[3];
 	numberplayer3[1] = numberplayer3[1] + rainbowinplayer[4];
 	int totalyou=0,totalplayer1=0,totalplayer2=0,totalplayer3=0;
-	//°O±o¥h¶ñÅÜ¼Æ
+	//è¨˜å¾—å»å¡«è®Šæ•¸
 	for (int i = 1; i <= 4; i++)
 	{
 		switch (i)
